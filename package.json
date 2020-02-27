@@ -1,0 +1,39 @@
+{
+  "name": "party-up",
+  "version": "0.0.1",
+  "description": "party game platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jd2566/party-up.git"
+  },
+  "author": "jd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jd2566/party-up/issues"
+  },
+  "homepage": "https://github.com/jd2566/party-up#readme",
+  "devDependencies": {
+    "@types/koa": "^2.11.0",
+    "@types/koa-helmet": "^3.1.2",
+    "@types/koa-joi-router": "^5.2.3",
+    "@types/node": "^8.0.29",
+    "@types/pg": "^7.14.1",
+    "nodemon": "^2.0.2",
+    "ts-node": "3.3.0",
+    "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "koa-body": "^4.1.1",
+    "koa-helmet": "^5.2.0",
+    "koa-views": "^6.2.1",
+    "mongodb": "^3.0.8",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.16",
+    "winston": "^3.2.1"
+  }
+}
