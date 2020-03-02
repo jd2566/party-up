@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "copy-views": "copyfiles -u 1 ./src/views/*.ejs ./dist"
   },
   "repository": {
     "type": "git",
@@ -28,8 +30,10 @@
     "typescript": "^3.8.2"
   },
   "dependencies": {
+    "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-helmet": "^5.2.0",
+    "koa-router": "^8.0.8",
     "koa-views": "^6.2.1",
     "mongodb": "^3.0.8",
     "reflect-metadata": "^0.1.10",

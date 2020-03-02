@@ -1,0 +1,9 @@
+package-lock.json
+ormconfig.json
+README.md
+node_modules/
+.idea/
+.vscode/
+dist/
+error.log
+src/uploads/

@@ -1,9 +1,28 @@
-version: '3'
+version: "3"
 services:
+  party-nginx:
+    image: nginx:latest
+    container_name: party-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - party
+
+  party:
+    container_name: party
+    restart: always
+    build: .
+    environment:
+      - PORT=3000
+    ports:
+      - "3000"
+    links:
+      - mongodb
 
   mongodb:
     image: "mongo:4.0.6"
     container_name: "typeorm-mongodb"
     ports:
       - "27017:27017"
-
