@@ -2,6 +2,7 @@ import {
   Entity,
   ObjectIdColumn,
   ObjectID,
+  Index,
   Column,
   CreateDateColumn,
   UpdateDateColumn
@@ -12,6 +13,7 @@ export class Questions {
   @ObjectIdColumn()
   id: ObjectID;
 
+  @Index({ unique: true })
   @Column()
   title: String;
 
