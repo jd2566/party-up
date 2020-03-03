@@ -4,6 +4,8 @@
   "description": "party game platform",
   "main": "index.js",
   "scripts": {
+    "serve": "vue-cli-service serve",
+    "vue-build": "vue-cli-service build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/index.ts",
     "build": "rm -rf dist && tsc",
@@ -27,7 +29,14 @@
     "@types/pg": "^7.14.1",
     "nodemon": "^2.0.2",
     "ts-node": "3.3.0",
-    "typescript": "^3.8.2"
+    "typescript": "^3.8.2",
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
     "koa": "^2.11.0",
@@ -38,6 +47,8 @@
     "mongodb": "^3.0.8",
     "reflect-metadata": "^0.1.10",
     "typeorm": "0.2.16",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11"
   }
 }
