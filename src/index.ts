@@ -1,4 +1,5 @@
 import Koa from "koa";
+import cors from "@koa/cors";
 import koaBody from "koa-body";
 import helmet from "koa-helmet";
 import views from "koa-views";
@@ -10,12 +11,32 @@ import { createConnection } from "typeorm";
 import { unprotectedRouter } from "./configs/unprotectedRoutes";
 import { logger } from "./configs/logging";
 
+const validOrigins = [`http://localhost:8080`];
+
+function verifyOrigin(ctx) {
+  const origin = ctx.headers.origin;
+  if (!originIsValid(origin)) return false;
+  return origin;
+}
+
+function originIsValid(origin) {
+  return validOrigins.indexOf(origin) != -1;
+}
+
 createConnection()
   .then(async connection => {
     const app = new Koa();
     app.use(helmet());
 
     app.use(logger(winston));
+
+    // Enable cors with default options
+    app.use(
+      cors({
+        origin: verifyOrigin,
+        credentials: true
+      })
+    );
 
     app.use(
       koaBody({
