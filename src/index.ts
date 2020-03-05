@@ -11,7 +11,11 @@ import { createConnection } from "typeorm";
 import { unprotectedRouter } from "./configs/unprotectedRoutes";
 import { logger } from "./configs/logging";
 
-const validOrigins = [`http://localhost:8080`];
+const validOrigins = [
+  `http://localhost:8080`,
+  `http://localhost`,
+  `http://139.162.59.26`
+];
 
 function verifyOrigin(ctx) {
   const origin = ctx.headers.origin;

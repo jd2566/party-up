@@ -30,12 +30,12 @@
                 </v-carousel>
               </v-card-text>
               <v-card-actions>
-                <v-btn @click="currentQuestion--" color="primary">
+                <v-btn large @click="currentQuestion--" color="primary">
                   <v-icon right dark>mdi-arrow-left-bold-box</v-icon>
                   上一題
                 </v-btn>
                 <v-spacer />
-                <v-btn @click="currentQuestion++" color="primary">
+                <v-btn large @click="currentQuestion++" color="primary">
                   下一題
                   <v-icon right dark>mdi-arrow-right-bold-box</v-icon>
                 </v-btn>
@@ -80,7 +80,7 @@ export default {
     };
   },
   async mounted() {
-    const allQuestions = await axios("http://localhost:3000/questions");
+    const allQuestions = await axios("http://139.162.59.26:8080/questions");
     this.questions = this.shuffle(allQuestions.data.questions);
     this.questions.forEach(q => {
       this.questionColors.push(this.randColor());
