@@ -14,7 +14,7 @@ import { logger } from "./configs/logging";
 const validOrigins = [
   `http://localhost:8080`,
   `http://localhost`,
-  `http://139.162.59.26`
+  `http://139.162.59.26`,
 ];
 
 function verifyOrigin(ctx) {
@@ -28,7 +28,7 @@ function originIsValid(origin) {
 }
 
 createConnection()
-  .then(async connection => {
+  .then(async (connection) => {
     const app = new Koa();
     app.use(helmet());
 
@@ -38,7 +38,7 @@ createConnection()
     app.use(
       cors({
         origin: verifyOrigin,
-        credentials: true
+        credentials: true,
       })
     );
 
@@ -47,8 +47,8 @@ createConnection()
         multipart: true,
         formLimit: 15,
         formidable: {
-          uploadDir: __dirname + "/uploads"
-        }
+          uploadDir: __dirname + "/uploads",
+        },
       })
     );
 
@@ -58,14 +58,14 @@ createConnection()
       } catch (err) {
         ctx.status = err.statusCode || err.status || 500;
         ctx.body = {
-          message: err.message
+          message: err.message,
         };
       }
     });
 
     app.use(
       views(__dirname + "/views", {
-        extension: "ejs"
+        extension: "ejs",
       })
     );
 
@@ -75,4 +75,4 @@ createConnection()
 
     console.log(`Server running on port ${3000}`);
   })
-  .catch(error => console.log(error));
+  .catch((error) => console.log(error));
