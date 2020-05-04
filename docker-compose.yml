@@ -34,7 +34,7 @@ services:
     restart: always
     build: .
     environment:
-      PORT: 3000
+      PORT: 80
       VIRTUAL_HOST: bot.partyup.xyz
       LETSENCRYPT_HOST: bot.partyup.xyz
       LETSENCRYPT_EMAIL: bolinli2566@gmail.com
